@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ACME Design Previews</title>
+<style>
+*{box-sizing:border-box} html,body{margin:0;height:100%}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#1F4A87;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{background:#fff;width:100%;max-width:380px;padding:34px 32px 30px;box-shadow:0 10px 40px rgba(0,0,0,.25)}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#326DC2;margin-bottom:8px}
+h1{font-size:22px;font-weight:800;color:#1F4A87;margin:0 0 6px;letter-spacing:-.01em}
+p.sub{font-size:14px;color:#516468;margin:0 0 22px;line-height:1.4}
+label{display:block;font-size:12px;font-weight:600;color:#16302f;margin-bottom:6px}
+input{width:100%;font-size:15px;padding:12px 13px;border:1px solid #cfd9da;background:#fbfdfd;outline:none}
+input:focus{border-color:#326DC2}
+button{width:100%;margin-top:14px;font-size:15px;font-weight:600;color:#fff;background:#1e5fd6;border:0;padding:13px;cursor:pointer}
+button:hover{background:#1a53bd}
+.err{min-height:18px;margin-top:12px;font-size:13px;color:#c0392b}
+</style></head><body>
+<form class="card" onsubmit="unlock();return false;">
+  <div class="eyebrow">TDG Showcase</div>
+  <h1>Design Previews</h1>
+  <p class="sub">These samples are password-protected. Enter the password to view it.</p>
+  <label for="pw">Password</label>
+  <input id="pw" type="password" autocomplete="off" autofocus>
+  <button type="submit">View samples</button>
+  <div class="err" id="err"></div>
+</form>
+<script>
+var __TDG_GATE={salt:"MmPGDedxUKi95DIxlJUZnA==",iv:"YYtjGOsY9zMygCc9",ct:"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",iter:250000};
+function b64(s){return Uint8Array.from(atob(s),c=>c.charCodeAt(0));}
+async function unlock(){
+  const pw=document.getElementById('pw').value, err=document.getElementById('err');
+  err.textContent='Unlocking…';
+  try{
+    const km=await crypto.subtle.importKey('raw',new TextEncoder().encode(pw),'PBKDF2',false,['deriveKey']);
+    const key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:b64(__TDG_GATE.salt),iterations:__TDG_GATE.iter,hash:'SHA-256'},km,{name:'AES-GCM',length:256},false,['decrypt']);
+    const buf=await crypto.subtle.decrypt({name:'AES-GCM',iv:b64(__TDG_GATE.iv)},key,b64(__TDG_GATE.ct));
+    const html=new TextDecoder().decode(buf);
+    try{sessionStorage.setItem('acme_pw',pw);}catch(e){}
+    document.open();document.write(html);document.close();
+  }catch(e){ err.textContent='Incorrect password. Please try again.'; }
+}
+(function(){try{var p=sessionStorage.getItem('acme_pw');if(p){document.getElementById('pw').value=p;unlock();}}catch(e){}})();
+</script>
+</body></html>
